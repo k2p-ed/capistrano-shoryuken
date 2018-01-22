@@ -97,7 +97,7 @@ namespace :shoryuken do
           options = fetch(:shoryuken_options) and args.push Array(options).join(' ')
           
           with rails_env: fetch(:shoryuken_env) do
-            execute *'RAILS_ENV=' + fetch(:shoryuken_env), fetch(:shoryuken_cmd), args.compact.join(' ')
+            execute *fetch(:shoryuken_cmd), args.compact.join(' ')
           end
         end
       end
